@@ -1,0 +1,120 @@
+.eventsContainer {
+    padding: 30px;
+    background-color: #f0f8ff; /* Light blue background */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #003366; /* Dark blue text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .eventList {
+    width: 60%; /* Reduce the width of the event list container */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .eventBlock {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid #0066cc;
+    cursor: pointer;
+  }
+  
+  .eventBlock:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .eventHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .organizerLogo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: contain;
+  }
+  
+  .eventTitle {
+    color: #0073e6;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  .organizerName {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .eventTag {
+    background-color: #eaf5ff;
+    color: #0073e6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .location {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #004080;
+    margin-bottom: 10px;
+  }
+  
+  .attendeesCount {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .deadline {
+    font-size: 1rem;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+  }
+  
+  /* Additional improvements for responsiveness */
+  @media (max-width: 768px) {
+    .eventBlock {
+      padding: 15px;
+    }
+  
+    .eventTitle {
+      font-size: 1.4rem;
+    }
+  }
+
+  .registerButton {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .registerButton:hover {
+    background-color: #004d99;
+  }
+  

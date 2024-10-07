@@ -1,0 +1,120 @@
+.jobsContainer {
+    padding: 30px;
+    background-color: #f0f8ff; /* Light blue background */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #003366; /* Dark blue text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .jobList {
+    width: 60%; /* Reduce the width of the job list container */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .jobBlock {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid #0066cc;
+    cursor: pointer;
+  }
+  
+  .jobBlock:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .jobHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .companyLogo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: contain;
+  }
+  
+  .jobTitle {
+    color: #0073e6;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  .companyName {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .jobTag {
+    background-color: #eaf5ff;
+    color: #0073e6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .location {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #004080;
+    margin-bottom: 10px;
+  }
+  
+  .skills {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .deadline {
+    font-size: 1rem;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+  }
+  
+  .applyButton {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .applyButton:hover {
+    background-color: #004d99;
+  }
+  
+  /* Additional improvements for responsiveness */
+  @media (max-width: 768px) {
+    .jobBlock {
+      padding: 15px;
+    }
+  
+    .jobTitle {
+      font-size: 1.4rem;
+    }
+  }
+  

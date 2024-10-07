@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e3a8a; /* Adjust to your theme */
+    margin-bottom: 2rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .cardTitle {
+    color: #3b82f6; /* Adjust to your theme */
+    margin-bottom: 0.5rem;
+  }
+  
+  .textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.25rem;
+    resize: none;
+    outline: none;
+  }
+  
+  .buttonGroup {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .buttonGenerate {
+    background-color: #3b82f6; /* Adjust to your theme */
+    color: white;
+  }
+  
+  .buttonGenerate:hover {
+    background-color: #2563eb; /* Darker shade */
+  }
+  
+  .buttonSubmit {
+    background-color: #1e40af; /* Adjust to your theme */
+    color: white;
+  }
+  
+  .buttonSubmit:hover {
+    background-color: #1e3a8a; /* Darker shade */
+  }
+  

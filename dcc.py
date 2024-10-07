@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 import requests
 import uvicorn
 
@@ -8,12 +9,16 @@ headers = {
     "Authorization": f"Bearer {API_TOKEN}"
 }
 
+# Define the Pydantic model for input validation
+class ProfileKeywords(BaseModel):
+    interactions: dict  # Adjust this according to the actual structure of 'profile_keywords'
+
 app = FastAPI()
 
 @app.post("/generate-problem")
-def generate_problem(profile_keywords: dict):
+def generate_problem(profile_keywords: ProfileKeywords):
     prompt = (
-        f"{profile_keywords} represents the number of interactions a user has with specific topics. "
+        f"{profile_keywords.interactions} represents the number of interactions a user has with specific topics. "
         f"Based on the topics with the highest interaction, create a concise problem statement "
         f"(maximum 5 lines) relevant to the user. The problem statement should be no longer than "
         f"1500 characters and should only include the problem itself, nothing else."
@@ -28,11 +33,8 @@ def generate_problem(profile_keywords: dict):
     response = requests.post(api_url, headers=headers, json={"inputs": prompt, "parameters": parameters})
     if response.status_code == 200:
         output = response.json()
-        if isinstance(output, list) and len(output) > 0 and "generated_text" in output[0]:
-            final_output = output[0]["generated_text"][len_prompt:].strip()
-            return final_output
-        else:
-            return "Failed to generate problem statement: Unexpected response format"
+        return output
+
     else:
         return f"Failed to generate problem statement: {response.text}"
 

@@ -20,7 +20,7 @@ def recommend_hackathons(keyword_dict: dict, hackathon_data: pd.DataFrame) -> pd
     hackathon_data['processed_description'] = hackathon_data['details'].apply(preprocess_text)
 
     # Print the hard-coded keyword dictionary
-    print("Keyword Dictionary:", keyword_dict)
+    print("Keyword Dictionary:", json.dumps(keyword_dict, indent=2))
 
     # Continue with the TF-IDF and cosine similarity calculation
     keyword_profile = ' '.join([f"{k} " * v for k, v in keyword_dict.items()])
@@ -34,7 +34,7 @@ def recommend_hackathons(keyword_dict: dict, hackathon_data: pd.DataFrame) -> pd
     return ranked_suggestions.head(5)
 
 # Use a relative path for the CSV file
-STATIC_CSV_PATH = os.path.join(os.path.dirname('/home/vishwajitsarnobat/workspace/kjhackathon/'), "data.csv")
+STATIC_CSV_PATH = os.path.join(os.path.dirname('/home/vishwajitsarnobat/workspace/kjhackathon/data.csv'), "data.csv")
 
 # Load the data
 try:
@@ -57,8 +57,8 @@ if 'details' in hackathon_data.columns and 'names' in hackathon_data.columns:
     # Get the top 5 recommendations
     top_5_recommendations = recommend_hackathons(keyword_dict, hackathon_data)
 
-    # Convert DataFrame to dictionary and print
+    # Convert DataFrame to dictionary and print formatted results
     result = top_5_recommendations[['names', 'details', 'similarity']].to_dict('records')
-    print("Top 5 Hackathon Recommendations:", json.dumps(result, indent=2))
+    print("Top 5 Hackathon Recommendations:\n", json.dumps(result, indent=2))
 else:
     print("Error: CSV file must contain 'details' and 'names' columns")
